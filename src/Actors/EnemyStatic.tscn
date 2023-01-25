@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/static_enemy.png" type="Texture" id=2]
+
+[node name="Enemy" type="KinematicBody2D"]
+scale = Vector2( 0.8, 0.8 )
+collision_layer = 2
+collision_mask = 9
+
+[node name="enemy_sprite" type="Sprite" parent="."]
+position = Vector2( 0, -30 )
+texture = ExtResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 0, -12.5 )
+scale = Vector2( 1, 0.970833 )
+rect = Rect2( -50, -50, 100, 60 )
+process_parent = true
+physics_process_parent = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -3.75, 1.25 )
+polygon = PoolVector2Array( -1.25, -1.25, -55, -1.25, -47.5, -27.5, -28.75, -55, -10, -61.25, 13.75, -60, 30, -53.75, 62.5, -10, 62.5, -1.25 )
